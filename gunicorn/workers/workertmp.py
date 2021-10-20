@@ -53,7 +53,7 @@ class WorkerTmp(object):
         if time_content:
             return int(time_content)
 
-        return os.fstat(self._tmp.fileno()).st_ctime
+        return int(time.monotonic())
 
     def fileno(self):
         return self._tmp.fileno()
