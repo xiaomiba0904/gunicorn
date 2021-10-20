@@ -44,6 +44,7 @@ class WorkerTmp(object):
 
     def notify(self):
         self._tmp.seek(0, 0)
+        self._tmp.truncate()
         self._tmp.write(str(int(time.monotonic())))
 
     def last_update(self):
